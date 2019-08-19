@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Reverses an array.
  * @param {any} array
@@ -18,18 +20,4 @@ const reverseArray = array => {
   return array;
 };
 
-const testArrays = [
-  [1, 2, 3, 4, 5],
-  [1, 2, 3, 4],
-  [1, 2],
-  [1],
-  [],
-  null,
-  undefined,
-  [89, 2354, 3546, 23, 10, -923, 823, -12]
-];
-
-testArrays.forEach(inputArray => {
-  console.log(inputArray);
-  console.log('-->', reverseArray(inputArray));
-});
+module.exports = reverseArray;
