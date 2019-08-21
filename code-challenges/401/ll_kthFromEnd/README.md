@@ -6,7 +6,9 @@ Write a method for the Linked List class which takes a number, `k`, as a paramet
 
 ## Approach & Efficiency
 #### `kthFromEnd()`
-First a quick check for a truthy value of `this.head` will handle cases where the linked list is empty or undefined. Starting with a `lead` referencing the head node, use `lead.next` to traverse `k` nodes. If the end of the list is reached prior to `k` calls, no node is kth from the end, so return null. Otherwise, continue to traverse both `lead` and `target` at the same rate until `lead` reaches the last node. `target` is `k` elements from the end of the list!
+If the linked list is empty or undefined, or if `k` is less than 0, return null.
+
+Starting with a `lead` referencing the head node, use `lead.next` to traverse `k` nodes. If the end of the list is reached prior to `k` calls, no node is kth from the end, so return null. Otherwise, continue to traverse both `lead` and `target` at the same rate until `lead` reaches the last node. `target` is `k` elements from the end of the list!
 
 Time Complexity: O(n)  
 Space Complexity: O(1)
