@@ -18,7 +18,7 @@ In the recursive function, our two parameters are neighboring nodes, `previous` 
 The final step is reassigning node pointers. In each recursive call, including the base case, `current.next` becomes `previous`, and `previous.next` can be set to null. During recursion, each `previous` node will end up getting a new `next` reference, except for the first call -- this node is the new tail of the linked list.
 
 Time Complexity: O(n)  
-Space Complexity: O(1)
+Space Complexity: O(n)
 
 ## Solution
 ![](assets/ll_reverse.jpg)
