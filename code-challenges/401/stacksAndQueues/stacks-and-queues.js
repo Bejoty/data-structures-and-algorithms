@@ -1,65 +1,96 @@
 'use strict';
 
-
-class Node {
-
-  constructor(value, next=null) {
-    this.value = value;
-    this.next = next;
-  }
-
-}
+const { Node, LinkedList } = require('../linkedList/linked-list');
 
 
 // TODO - Stack Documentation
-// TODO - check/handle errors
-class Stack {
+class Stack extends LinkedList {
 
   constructor() {
-    this.top = null;
+    super();
   }
 
   isEmpty() {
-    return !this.top;
+    return !this.head;
   }
 
   push(value) {
-    // TODO - add a new node with `value` to the top of the stack
+    const node = new Node(value, this.head);
+    this.head = node;
   }
 
   pop() {
-    // TODO - remove the node from the top of the stack, and return the node’s value
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    const value = this.head.value;
+    this.head = this.head.next;
+    return value;
   }
 
   peek() {
-    // TODO - return the value of the node located on top of the stack, without removing it from the stack
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    return this.head.value;
   }
 
 }
 
 
-// TODO - Stack Documentation
-// TODO - check/handle errors
-class Queue {
+// TODO - Queue Documentation
+/**
+ * @class Queue
+ *
+ * The specification asks for a `front` property, and a O(1) enqueue method.
+ * For a singly linked list, a `front` reference would lead to a O(1) dequeue
+ * and peak, but a O(n) enqueue, since new nodes logically start in the back.
+ *
+ * I have opted to implement Queue with this in mind, where `front` is `head`.
+ */
+class Queue extends LinkedList {
 
   constructor() {
-    this.front = null;
+    super();
   }
 
   isEmpty() {
-    return !this.front;
+    return !this.head;
   }
 
   enqueue(value) {
-    // TODO - add a new node with `value` to the back of the queue
+    const node = new Node(value);
+
+    if (this.isEmpty()) {
+      this.head = node;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+
+      current.next = node;
+    }
   }
 
   dequeue() {
-    // TODO - remove the node from the front of the queue, and return the node’s value
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    const value = this.head.value;
+    this.head = this.head.next;
+    return value;
   }
 
   peek() {
-    // TODO - return the value of the node located in the front of the queue, without removing it from the queue
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    return this.head.value;
   }
 
 }
