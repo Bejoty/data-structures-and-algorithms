@@ -28,6 +28,8 @@ describe('Testing Stack', () => {
 
   it('can successfully pop off the stack', () => {
     stack.push(1);
+    stack.push(2);
+    expect(stack.pop()).toEqual(2);
     expect(stack.pop()).toEqual(1);
   });
 
@@ -60,27 +62,46 @@ describe('Testing Stack', () => {
 describe('Testing Queue', () => {
 
   it('can successfully enqueue into a queue', () => {
-
+    queue.enqueue(1);
+    expect(queue.isEmpty()).toBeFalsy();
+    expect(queue.toString()).toEqual(`[1]`);
   });
 
   it('can successfully enqueue multiple values into a queue', () => {
-
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    expect(queue.toString()).toEqual(`[1, 2, 3]`);
   });
 
   it('can successfully dequeue out of a queue the expected value', () => {
-
+    queue.enqueue(1);
+    queue.enqueue(2);
+    expect(queue.dequeue()).toEqual(1);
+    expect(queue.dequeue()).toEqual(2);
   });
 
   it('can successfully peek into a queue, seeing the expected value', () => {
-
+    queue.enqueue(1);
+    queue.enqueue(2);
+    expect(queue.peek()).toEqual(1);
+    queue.dequeue();
+    expect(queue.peek()).toEqual(2);
   });
 
   it('can successfully empty a queue after multiple dequeues', () => {
-
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
+    expect(queue.isEmpty()).toBeTruthy();
   });
 
   it('can successfully instantiate an empty queue', () => {
-
+    expect(queue).toBeTruthy();
+    expect(queue.isEmpty()).toBeTruthy();
   });
 
 });
