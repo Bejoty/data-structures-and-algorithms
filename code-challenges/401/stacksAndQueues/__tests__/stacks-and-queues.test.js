@@ -56,6 +56,11 @@ describe('Testing Stack', () => {
     expect(stack.isEmpty()).toBeTruthy();
   });
 
+  it('returns null when trying to peek or pop an empty stack', () => {
+    expect(stack.peek()).toBeNull();
+    expect(stack.pop()).toBeNull();
+  })
+
 });
 
 
@@ -103,5 +108,10 @@ describe('Testing Queue', () => {
     expect(queue).toBeTruthy();
     expect(queue.isEmpty()).toBeTruthy();
   });
+
+  it('returns null when trying to peek or dequeue an empty queue', () => {
+    expect(queue.peek()).toBeNull();
+    expect(queue.dequeue()).toBeNull();
+  })
 
 });
