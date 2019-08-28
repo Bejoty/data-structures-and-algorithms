@@ -24,7 +24,7 @@ const mergeLinkedLists = (list1, list2) => {
 
     current.next = toInsert;
 
-    return list1.head;
+    return list1;
 };
 
 module.exports = mergeLinkedLists;
