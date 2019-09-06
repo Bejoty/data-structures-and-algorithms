@@ -3,17 +3,19 @@
 const {Queue} = require("../stacksAndQueues/stacks-and-queues");
 
 /**
- * TODO
- * @param root
- * @param parent
- * @param child
- * @returns {null|(null|number)}
+ * Returns the path length between two nodes in a binary tree.
+ *
+ * @param {Node} root - The root of a binary tree
+ * @param {number} parent - The value of a node that is an ancestor of child
+ * @param {number} child - The value of a node that is a descendent of parent
+ * @returns {number} The path length, or null if the root is null or either
+ * value is not found in the tree.
  */
 const findPathLength = (root, parent, child) => {
   if (!root) return null;
 
   // Step 1: Find parent
-  const node = findParent(root, parent);
+  const node = findTargetNode(root, parent);
   if (!node) return null;
 
   // Step 2: Find path to child recursively
@@ -21,12 +23,13 @@ const findPathLength = (root, parent, child) => {
 };
 
 /**
- * TODO
- * @param root
- * @param target
- * @returns {*}
+ * Searches for a node with the given value within a binary tree.
+ *
+ * @param {Node} root - The root of a binary tree
+ * @param {number} target - The value of a node to find
+ * @returns {Node} The target node, if found, otherwise null
  */
-const findParent = (root, target) => {
+const findTargetNode = (root, target) => {
   const queue = new Queue();
   queue.enqueue(root);
 
@@ -45,14 +48,18 @@ const findParent = (root, target) => {
       queue.enqueue(node.right);
     }
   }
+
+  return null;
 };
 
 /**
- * TODO
- * @param current
- * @param target
- * @param depth
- * @returns {null|number|(null|number)}
+ * A recursive function that looks for a node with the target value and returns
+ * the length of the path to it.
+ *
+ * @param {Node} current - The node currently being visited
+ * @param {number} target - The value of the node to find
+ * @param {number} depth - The current depth from the initial input node
+ * @returns {number} The length of the path, or null if target is not found
  */
 const findPathLengthRecursive = (current, target, depth=0) => {
   if (!current) return null;
