@@ -10,3 +10,4 @@
 #### Aug. 27 - [ll_merge](ll_merge)
 #### Aug. 28 - [multiBracketValidation](multiBracketValidation)
 #### Sep. 04 - [findLeaves](findLeaves)
+#### Sep. 05 - [findPathLength](findPathLength)
