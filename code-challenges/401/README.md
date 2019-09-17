@@ -11,3 +11,4 @@
 #### Aug. 28 - [multiBracketValidation](multiBracketValidation)
 #### Sep. 04 - [findLeaves](findLeaves)
 #### Sep. 05 - [findPathLength](findPathLength)
+#### Sep. 16 - [repeatedWord](repeatedWord)
