@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lintFMV": "eslint 'code-challenges/401/findMaximumValue/**/*.js'",
     "test": "jest --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose"
   },
@@ -11,5 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "jest": "^24.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
   }
 }
