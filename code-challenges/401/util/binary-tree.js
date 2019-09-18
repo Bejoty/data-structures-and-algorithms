@@ -13,15 +13,39 @@ class Node {
 /** Class representing a binary tree. */
 class BinaryTree {
   /**
-   * Create a an empty binary tree with a null root.
+   * Converts an array of values into a binary tree, constructing the tree
+   * by filling each level from "left" to "right."
    *
-   * @param {Node} root - The root node (optional)
+   * @param {Array} array - An array of elements (optional)
    */
-  constructor(root=null) {
-   this.root = root;
+  constructor(array) {
+    if (!Array.isArray(array) || array.length === 0) {
+      this.root = null;
+      return;
+    }
+
+    this.root = new Node(array[0]);
+
+    const queue = new Queue();
+    let current = this.root;
+    let index = 1;
+    for (let i = 1; i < array.length; i++) {
+      const node = new Node(array[i]);
+      queue.enqueue(node);
+
+      if (!current.left) {
+        current.left = node;
+      } else if (!current.right) {
+        current.right = node;
+      } else {
+        current = queue.dequeue();
+        current.left = node;
+      }
+    }
   }
 
   /**
+   * TODO - Refactor any code using this function to call the constructor instead
    * Builds a binary tree from an array
    *
    * @param {Array} array - An array representation of a binary tree
