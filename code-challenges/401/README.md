@@ -13,3 +13,4 @@
 #### Sep. 05 - [findPathLength](findPathLength)
 #### Sep. 16 - [repeatedWord](repeatedWord)
 #### Sep. 17 - [findMaximumValue](findMaximumValue)
+#### Sep. 18 - [dll_removeDuplicates](dll_removeDuplicates)
