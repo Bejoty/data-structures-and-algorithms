@@ -12,3 +12,4 @@
 #### Sep. 04 - [findLeaves](findLeaves)
 #### Sep. 05 - [findPathLength](findPathLength)
 #### Sep. 16 - [repeatedWord](repeatedWord)
+#### Sep. 17 - [findMaximumValue](findMaximumValue)
