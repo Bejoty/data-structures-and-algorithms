@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lintFMV": "eslint 'code-challenges/401/findMaximumValue/**/*.js'",
+    "lintExp": "eslint 'code-challenges/401/dll_removeDuplicates/**/*.js'",
     "test": "jest --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose"
   },
@@ -16,6 +16,7 @@
   "devDependencies": {
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0"
   }
 }
