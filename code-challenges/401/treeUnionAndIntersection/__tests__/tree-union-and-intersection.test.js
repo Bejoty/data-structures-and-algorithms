@@ -15,7 +15,7 @@ describe('#treeUnionAndIntersection', () => {
     const { union, intersection } = treeUnionAndIntersection(treeA.root, treeB.root);
 
     const expectedUnion = new Set(
-      [4, 15, 42, 75, 100, 125, 150, 160, 200, 250, 300, 350, 500, 600]
+      [4, 15, 42, 75, 100, 125, 150, 160, 175, 200, 250, 300, 350, 500, 600]
     );
     const expectedIntersection = new Set(
       [100, 125, 160, 175, 200, 350, 500]
