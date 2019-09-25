@@ -16,10 +16,10 @@ const findUnionAndIntersection = (rootA, rootB) => {
   const intersection = [];
 
   for (let value of setB) {
-    union.push(value);
-
     if (setA.has(value)) {
       intersection.push(value);
+    } else {
+      union.push(value);
     }
   }
 

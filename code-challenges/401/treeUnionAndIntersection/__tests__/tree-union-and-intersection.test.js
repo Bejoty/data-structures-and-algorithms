@@ -21,10 +21,12 @@ describe('#treeUnionAndIntersection', () => {
       [100, 125, 160, 175, 200, 350, 500]
     );
 
+    expect(expectedUnion.size).toEqual(union.length);
     for (let i of union) {
       expect(expectedUnion.has(i)).toBeTruthy();
     }
 
+    expect(expectedIntersection.size).toEqual(intersection.length);
     for (let i of intersection) {
       expect(expectedIntersection.has(i)).toBeTruthy();
     }
