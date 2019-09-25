@@ -19,7 +19,7 @@ class BinaryTree {
    * @param {Array} array - An array of elements (optional)
    */
   constructor(array) {
-    if (!Array.isArray(array) || array.length === 0) {
+    if (!Array.isArray(array) || array.length === 0 || array[0] === null) {
       this.root = null;
       return;
     }
@@ -30,7 +30,10 @@ class BinaryTree {
     let current = this.root;
     let index = 1;
     for (let i = 1; i < array.length; i++) {
-      const node = new Node(array[i]);
+      const value = array[i];
+      if (!value) continue;
+
+      const node = new Node(value);
       queue.enqueue(node);
 
       if (!current.left) {
